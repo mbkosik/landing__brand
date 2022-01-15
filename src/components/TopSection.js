@@ -2,61 +2,61 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
 import HeroBg from "./../assets/hero_bg.png";
-import {BiPhone, BiMailSend} from 'react-icons/bi';
+import { BiPhone, BiMailSend } from "react-icons/bi";
 import { CgMenu } from "react-icons/cg";
-import {Button as RsButton } from 'rsuite';
+import { Button as RsButton } from "rsuite";
 
 export const TopSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 600px;
   background-image: url(${HeroBg});
   background-position: center;
   background-size: cover;
-  display: flex; 
-  flex-direction: column; 
 `;
 
 export const TopBar = styled.div`
+  display: flex;
   width: 100%;
   height: 50px;
-  display: flex;
   background-color: #0082e5;
   color: white;
 
   @media (max-width: 705px) {
-    display: none; 
+    display: none;
   }
 `;
 
 export const ContactBar = styled.div`
   display: flex;
+  align-items: center;
+  flex-grow: 1;
   gap: 10px;
-  flex-grow: 1; 
   margin: 0 20px;
-  align-items: center; 
 `;
 
 export const SearchBar = styled.input`
-  width: 15%; 
+  width: 15%;
   margin: 10px 30px;
-  background: #0988e8; 
-  border: 2px solid #2192e8; 
-  border-radius: 8px; 
-  color: white; 
-  padding: 5px; 
-`
+  padding: 5px;
+  border: 2px solid #2192e8;
+  border-radius: 8px;
+  background: #0988e8;
+  color: white;
+`;
 
 export const SignInBar = styled(Link)`
-  align-self: center; 
-  margin: 0 40px; 
-  color: white; 
-  text-decoration: none; 
+  align-self: center;
+  margin: 0 40px;
+  color: white;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: white;
   }
-`
+`;
 
 export const Nav = styled.div`
   display: flex;
@@ -66,9 +66,9 @@ export const Nav = styled.div`
 `;
 
 export const Logo = styled.p`
+  align-self: center;
   color: white;
   font-size: 32px;
-  align-self: center; 
 `;
 
 export const Menu = styled.div`
@@ -87,18 +87,18 @@ export const Menu = styled.div`
 `;
 
 export const MenuItem = styled(NavLink)`
+  padding: 10px;
   color: white;
   font-size: 16px;
   text-decoration: none;
-  padding: 10px;
 
   &:hover {
     text-decoration: underline;
   }
 
   &.active {
-    color: #305c7d;
     border: 2px solid #289ffa;
+    color: #305c7d;
     background-color: #1095fa;
   }
 `;
@@ -116,42 +116,42 @@ export const ToggleBar = styled.div`
 `;
 
 export const Hero = styled.div`
-  width: 70%; 
-  margin: 0 auto; 
-  text-align: center; 
-  flex-grow: 1; 
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 10%;  
-`
+  flex-grow: 1;
+  gap: 10%;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+`;
 
 export const HeroTitle = styled.h2`
   font-size: 46px;
   font-weight: 700;
-  color: white;  
-`
+  color: white;
+`;
 
 export const HeroDescription = styled.p`
-  font-size: 18px; 
-  color: white; 
-  line-height: 40px; 
-`
+  font-size: 18px;
+  color: white;
+  line-height: 40px;
+`;
 
 export const HeroBtn = styled(RsButton)`
-  width: 150px; 
+  width: 150px;
   height: 50px;
+  border: 1px solid white;
+  border-radius: 24px;
+  margin: 0 auto;
   color: white;
-  border: 1px solid white; 
-  border-radius: 24px; 
-  margin: 0 auto; 
   background-color: transparent;
 
   &:hover {
     color: #0362aa;
     border-color: #0362aa;
   }
-`
+`;
 
 // To-Do: (1): przełączanie do menu mobilnego po kliknięciu na ToggleBar
 
@@ -171,7 +171,7 @@ const TopSection = () => {
       <Nav>
         <Logo>Landing_BRAND</Logo>
         <Menu>
-          <MenuItem to="/" exact>
+          <MenuItem to="/home" exact>
             Home
           </MenuItem>
           <MenuItem to="/about">About us</MenuItem>
@@ -184,8 +184,14 @@ const TopSection = () => {
       </Nav>
       <Hero>
         <HeroTitle>Make something valuable</HeroTitle>
-        <HeroDescription>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  consequat. Duis aute irure dolor in reprehenderit in vol</HeroDescription>
-        <HeroBtn appearance="primary" size="lg">Get started</HeroBtn>
+        <HeroDescription>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore consequat. Duis aute
+          irure dolor in reprehenderit in vol
+        </HeroDescription>
+        <HeroBtn appearance="primary" size="lg">
+          Get started
+        </HeroBtn>
       </Hero>
     </TopSectionContainer>
   );
